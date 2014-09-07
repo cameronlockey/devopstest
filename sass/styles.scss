@@ -1,0 +1,210 @@
+/*
+ * Here Be Dragons - CSS Styles
+ *
+ * @author Cameron Lockey
+ *
+ */
+
+// customize bootstrap variables here:
+@import "variables";
+@import "bootstrap";
+@import "spacing";
+@import "mixins";
+
+/**==============================================
+*	! Framework Imports
+*==============================================*/
+@import "compass/css3/border-radius";
+@import "compass/css3/text-shadow";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transform";
+
+@import "bootstrap_5cols";
+
+/**==============================================
+*	! Top-Level Elements
+*==============================================*/
+html, body {min-height:100%;height:100%;}
+body { 
+	width:100%;
+	display:table;
+}
+body, input {
+	-webkit-font-smoothing:antialiased;
+	-moz-font-smoothing:antialiased;
+	font-smoothing:antialiased;
+	text-rendering:optimizeLegibility;
+	font-smooth:always;
+	font-weight: $font-weight-base;
+}
+a {
+	@include transition(color .3s ease-out);
+	text-decoration: none;
+	&:hover { color: $link-hover-color; text-decoration: none;}
+	
+	&.underline:hover { text-decoration: underline; }
+	
+	&.t-secondary {
+		&:hover { 
+			color: $brand-primary; 
+			&.underline { color: $brand-secondary; }
+		}
+	}
+		
+	&.t-tertiary {
+		text-decoration: none;
+		&:hover { text-decoration: underline; }
+	}
+}
+img {vertical-align:bottom;max-width:100%;height:auto;}
+ul, ol { 
+	margin-top:0; margin-bottom:0; 
+	
+	li { margin: $padding-xs-vertical 0; }
+}
+h1, h2, h3, h4, h5, h6 { margin:0; }
+p { padding:0.5em 0; line-height: 1.7em; margin:0; font-size: 1em;}
+hr { margin:0; padding:0; border-top-width: 1px; border-top-style:solid; border-color: $gray-light; }
+i { font-style:normal; }
+
+/**==============================================
+*	!Globals
+*==============================================*/
+.no-gutters {
+	padding-left:0 !important;
+	padding-right:0 !important;
+}
+.clear {clear: both;}
+.clrafter:after{clear:both;content: "";display:block;height:0;}
+.ctr {display:block !important;margin:0 auto;}
+.rel {position:relative;}
+.abs {position:absolute;}
+.block {display: block;}
+.strong {font-weight: bold;}
+.inline {display:inline-block;}
+.uline {text-decoration: underline;} 
+.uppr {text-transform:uppercase;}
+.italic {font-style:italic;}.none {display:none;}.no-un {text-decoration: none;}
+.tleft {text-align: left;}.tright {text-align:right;}.tcenter {text-align: center;}.tjust {text-align:justify;}
+.push-left {margin-right:auto;}.push-right {margin-left:auto;}
+.inset {box-shadow: inset 0 0 8px rgba(0,0,0,0.4);}
+.third {width:33.33%;}.twenty {width:20%;} .twenty-five {width:25%;}.thirty {width:30%;}
+.forty {width:40%;}.half {width:50%;}.sixty {width:60%;}
+.seventy {width:70%;}.seventy-five {width:75%;}.eighty {width:80%;}.ninety {width:90%;}
+.full {width:100%!important;}
+.bold {font-weight: bold;}
+.lt { font-weight: lighter; }
+.pointer { cursor: pointer; }
+.tight p { line-height: 1.25em; }
+.vert-helper { display:inline-block; height: 100%; vertical-align: middle; }
+.vert-helper + a { vertical-align: middle; }
+.nomin {min-height:0!important;}
+.bordered {border:1px solid $gray-light;}
+
+.round-all { @include border-radius($border-radius-base); }
+.round-top { @include border-radius($border-radius-base $border-radius-base 0 0); }
+.round-bottom { @include border-radius(0 0 $border-radius-base $border-radius-base); }
+
+.well {
+	@include box-shadow(none);
+	background:transparent;
+	display:inline-block;
+	font-size: 1.16em;
+	padding:$padding-small-vertical;
+	border:none;
+	
+	&.tight { padding: 0.19em 0.23em; line-height: 24px; }
+}
+
+.list-icons {
+	list-style: none;
+	
+	li {padding:20px 0;}
+	span {display:inline-block;vertical-align:middle;line-height: 6px;}
+}
+
+.div-scroll { 
+	@include border-radius();
+	overflow-x:hidden;overflow-y:scroll;padding:15px;width:100%;text-align:justify;
+	border: 1px solid $gray-light;
+}
+
+.terms-scroll {
+    height:150px; border-color: $gray-mid; background-color: white;
+}
+
+/* !Retreat Classes for bumping left */
+@for $i from 1 through 5 {
+	$tens: $i*10;
+	.retreat-#{$tens} { display:block; margin-left: $tens*-1px; }
+}
+
+/* !Advance Classes for bumping right */
+@for $i from 1 through 5 {
+	$tens: $i*10;
+	.advance-#{$tens} { display:block; margin-left: #{$tens}px; }
+}
+
+/* ! Basic Text/Background/Border Color Classes */
+.t-white { color: white; }
+.t-primary { color: $brand-primary; }
+.t-secondary { color: $brand-secondary; }
+.t-tertiary { color: $brand-tertiary; }
+.t-gray-darker { color: $gray-darker; }
+.t-gray-dark { color: $gray-dark; }
+.t-gray { color: $gray; }
+.t-gray-mid { color: $gray-mid; }
+.t-gray-light { color: $gray-light; }
+.t-gray-lighter { color: $gray-lighter; }
+.bg-white { background-color: white; }
+.gray { background: $gray; }
+.gray-mid { background-color: $gray-mid; }
+.gray-light { background-color: $gray-light; }
+.gray-lighter { background-color: $gray-lighter; }
+.offwhite { background-color: $offwhite; }
+.border-gray { border-color: $gray; }
+.border-gray-mid { border-color: $gray-mid; }
+.border-gray-light { border-color: $gray-light; }
+.border-gray-lighter { border-color: $gray-lighter; }
+.bg-primary { 
+	background-color: $brand-primary;
+	a { 
+		color: $primary-link-color; 
+		&:hover { color: white; }
+		&.t-secondary { 
+			@extend .t-secondary; 
+			&:hover { color: white; }
+		}
+		&.t-tertiary {
+			@extend .t-tertiary;
+		}
+	}
+}
+.bg-secondary { 
+	background-color: $brand-secondary; 
+	a { color: $secondary-link-color; }
+}
+.bg-tertiary { 
+	background-color: $brand-tertiary; 
+	a { color: $tertiary-link-color; }
+}
+
+/* !Fine (1px solid) Gray Border Classes */
+.fine { border: 1px solid $gray; }
+.fine-light { border: 1px solid $gray-light; }
+.fine-lighter { border: 1px solid $gray-lighter; }
+
+/* !Basic Font Sizing Classes */
+.t-xs { font-size: $font-size-xsmall !important; }
+.t-sm { font-size: $font-size-small !important; }
+.t-base { font-size: $font-size-base !important; }
+.t-md { font-size: $font-size-medium !important; }
+.t-lg { font-size: $font-size-large !important; }
+.t-xl { font-size: $font-size-xlarge !important; }
+
+.app-store-button {
+	display: block;
+	width: 220px;
+	height: 65px;
+	background: url('../img/app-store-badge.svg') left top no-repeat;
+}
