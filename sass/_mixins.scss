@@ -1,0 +1,67 @@
+/*
+ * Custom Mixins for inFocusJobs, LLC sites
+ *
+ */
+ 
+ @mixin font-display($important: true) {
+	 font: {
+	 	@if $important {
+		 	family: $font-family-display-sans !important;
+	 	}
+	 	@else
+	 	{
+		 	family: $font-family-display-sans;
+	 	}
+	 }
+ }
+ 
+ @mixin font-sans($important: true) {
+	 font: {
+	 	@if $important {
+		 	family: $font-family-sans-serif !important;
+	 	}
+	 	@else
+	 	{
+		 	family: $font-family-sans-serif;
+	 	}
+	 }
+ }
+ 
+ @mixin font-serif($important: true) {
+	 font: {
+	 	@if $important {
+		 	family: $font-family-serif !important;
+	 	}
+	 	@else
+	 	{
+		 	family: $font-family-serif;
+	 	}
+	 }
+ }
+ 
+ @mixin site-bg-img($img, $repeat:no-repeat) {
+	 background-image:url('/img/#{$brand-id}/#{$img}');
+	 background-repeat:$repeat;
+ }
+ 
+ @mixin sprite {
+	 @include site-bg-img($sprite-img);
+ }
+ 
+ @mixin placeholder($color) {
+	::-webkit-input-placeholder { /* WebKit browsers */
+		color:$color;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:$color;
+		opacity:  1;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:$color;
+		opacity:1;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+		color:$color;
+	}
+ }
+ 
