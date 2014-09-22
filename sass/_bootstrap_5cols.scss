@@ -1,0 +1,46 @@
+/*
+ * Bootstrap 3 - 5 Column Layout Shiv
+ *
+ * The following SCSS partial defines a 5-col Bootstrap 3 class that can be used
+ * to generate a 1/5th wide, responsive Bootstrap 3 column.
+ *
+ * @author Pawet of We Are SICC
+ * http://www.wearesicc.com/quick-tips-5-column-layout-with-twitter-bootstrap
+ *
+ */
+ 
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: $grid-gutter-width/2;
+    padding-left: $grid-gutter-width/2;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
