@@ -9164,15 +9164,37 @@ i {
   font-size: 330%;
 }
 /* line 234, ../sass/styles.scss */
+.plan-selector .btn-group {
+  margin-top: -9px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 240, ../sass/styles.scss */
+.plan-selector .btn-group.open .dropdown-toggle:hover, .plan-selector .btn-group.open .dropdown-toggle:active, .plan-selector .btn-group.open .dropdown-toggle:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 245, ../sass/styles.scss */
+.plan-selector .btn-group > .btn:active, .plan-selector .btn-group > .btn:focus {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 250, ../sass/styles.scss */
 .plan-selector .btn {
   font-size: 100%;
+  background-color: transparent;
+  color: #5cb85c;
   padding: 0;
   border: none;
-  border-bottom: 2px solid #444444;
+  border-right: none;
+  border-bottom: 2px solid #5cb85c;
   line-height: 1;
   border-radius: 0;
 }
-/* line 242, ../sass/styles.scss */
+/* line 261, ../sass/styles.scss */
 .plan-selector .btn.primary {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -9189,11 +9211,11 @@ i {
   border: none;
   padding: 10px 15px;
 }
-/* line 252, ../sass/styles.scss */
+/* line 271, ../sass/styles.scss */
 .plan-selector .btn.primary:hover {
   background-color: #78c478;
 }
-/* line 255, ../sass/styles.scss */
+/* line 274, ../sass/styles.scss */
 .plan-selector .btn.primary:active {
   margin-top: 4px;
   outline: none;
@@ -9201,24 +9223,28 @@ i {
   -moz-box-shadow: 0 1px 0 #3d8b3d;
   box-shadow: 0 1px 0 #3d8b3d;
 }
-/* line 261, ../sass/styles.scss */
+/* line 280, ../sass/styles.scss */
 .plan-selector .btn.primary:focus {
   outline: none;
 }
-/* line 266, ../sass/styles.scss */
-.plan-selector .btn:hover {
-  background-color: #ececec;
+/* line 285, ../sass/styles.scss */
+.plan-selector .btn:hover, .plan-selector .btn:focus, .plan-selector .btn:active {
+  -webkit-box-shadow: 0;
+  -moz-box-shadow: 0;
+  box-shadow: 0;
+  color: #80c780;
+  border-color: #80c780;
 }
-/* line 271, ../sass/styles.scss */
+/* line 292, ../sass/styles.scss */
 .plan-selector .dropdown-menu {
   padding: 0;
 }
-/* line 273, ../sass/styles.scss */
+/* line 294, ../sass/styles.scss */
 .plan-selector .dropdown-menu li {
   margin: 0;
   font-size: 130%;
 }
-/* line 276, ../sass/styles.scss */
+/* line 297, ../sass/styles.scss */
 .plan-selector .dropdown-menu li a {
   padding: 15px;
 }

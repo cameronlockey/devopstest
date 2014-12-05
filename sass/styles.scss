@@ -231,11 +231,30 @@ i { font-style:normal; }
 .plan-selector {
     font-size: 330%;
     
+    .btn-group {
+        margin-top:-9px;
+        
+        @include box-shadow(none);
+        
+        &.open {
+            .dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus {
+                @include box-shadow(none);
+            }
+        }
+        
+        & > .btn:active, & > .btn:focus { 
+            @include box-shadow(none); 
+        }
+    }
+    
     .btn {
         font-size: 100%;
+        background-color: transparent;
+        color: $brand-primary;
         padding:0;
         border:none;
-        border-bottom: 2px solid $text-color;
+        border-right:none;
+        border-bottom: 2px solid $brand-primary;
         line-height: 1;
         border-radius:0;
         
@@ -263,8 +282,10 @@ i { font-style:normal; }
             }
         }
         
-        &:hover {
-            background-color: $gray-lighter;
+        &:hover, &:focus, &:active {
+            @include box-shadow(0);
+            color: lighten($brand-primary, 10%);
+            border-color: lighten($brand-primary, 10%);
         }
     }
     
